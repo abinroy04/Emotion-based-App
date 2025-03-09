@@ -128,9 +128,3 @@ def analyze_audio():
 
 if __name__ == '__main__':
     app.run(debug=False)
-    test_audio = "adithya_angry.wav"
-    emotion_code = get_emotion_code(test_audio)
-    emotions = ["anger", "happy", "neutral", "sad"]
-    print(f"Emotion Code: {emotion_code}")
-    if emotion_code >= 0:
-        print(f"Detected Emotion: {emotions[emotion_code]}")
