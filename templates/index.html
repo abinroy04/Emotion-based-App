@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion-Based Movie Recommender</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="h-screen flex justify-center items-center relative overflow-hidden bg-gray-900 text-white">
+
+    <!-- Animated Gradient Background -->
+    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-gradient"></div>
+
+    <!-- Floating Particles -->
+    <div id="particles"></div>
+
+    <!-- Main Content -->
+    <div class="relative z-10 bg-black bg-opacity-60 p-10 rounded-lg shadow-lg text-center">
+        <h1 class="text-3xl font-bold mb-5">Emotion-Based Movie Recommender</h1>
+        <div class="mb-4">
+            <label for="audioFile" class="block mb-2 text-lg font-semibold">Upload Audio File:</label>
+            <input type="file" id="audioFile" accept="audio/*" class="p-2 rounded text-gray-900 bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <div id="uploadStatus" class="mt-2 text-sm text-gray-400"></div>
+        </div>
+        <button onclick="uploadAndAnalyze()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 transition duration-300 ease-in-out transform hover:scale-105">Analyze and Get Recommendations</button>
+        <div id="result" class="mt-5 text-lg"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
